@@ -1,0 +1,38 @@
+.navbar{
+    background-color:#E6ECFB;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:1750px;
+    height:200px;
+    margin-top:0;
+}
+.LibLogo{
+    height:200px;
+    padding-right:50px;
+}
+.LeftNav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    margin-right:400px;
+}
+.RightNav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    margin-left:400px;
+}
+ul{
+    display:flex;
+    list-style:none;
+    align-items:center;
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:25px;
+}
+
+li{
+    padding:20px;
+}
