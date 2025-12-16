@@ -6,6 +6,7 @@
     width:1750px;
     height:200px;
     margin-top:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .LibLogo{
     height:200px;
@@ -15,13 +16,13 @@
     display:flex;
     align-items:center;
     justify-content:flex-start;
-    margin-right:400px;
+    margin-right:380px;
 }
 .RightNav{
     display:flex;
     align-items:center;
     justify-content:flex-end;
-    margin-left:400px;
+    margin-left:380px;
 }
 ul{
     display:flex;
