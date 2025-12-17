@@ -1,0 +1,72 @@
+.pageAlign{
+    background-color:#E6ECFB;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:120px;
+    height: 2500px;
+    margin-top:1px;
+
+}
+.login{
+    background-color:#F3FBE6;
+    height:650px;
+    width:550px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top:110px;
+}
+.create{
+    background-color:#F3FBE6;
+    height:650px;
+    width:550px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top:110px;
+
+}
+.login h2{
+    font-size:50px;
+    font-weight:normal;
+    margin-bottom:50px;
+}
+.login p{
+    text-align: right;
+    width: 75%;
+
+}
+.create h2{
+    font-size:50px;
+    font-weight:normal;
+    margin-bottom:50px;
+}
+.formControl{
+    height:55px;
+    width:80%;
+    border:none;
+    font-size:20px;
+    font-family: "Inria Serif", serif;
+    font-style: normal;
+}
+.formControl::placeholder {
+    padding-left:15px;
+    font-size:20px;
+    font-family: "Inria Serif", serif;
+  font-style: normal;
+  opacity:0.5;
+}
+.loginButton{
+    height:55px;
+    width:40%;
+    border:none;
+    font-size:20px;
+    margin-top:30px;
+}

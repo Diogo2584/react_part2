@@ -1,0 +1,8 @@
+.card{
+    background-color:#E6ECFB;
+}
+.login{
+    display:flex;
+    flex-direction:column;
+    background-color:#F3FBE6;
+}
