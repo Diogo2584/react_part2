@@ -8,17 +8,10 @@ function Settings() {
 
   return (
    //sidebar
-    <div 
-    style = {{ 
-      backgroundColor: theme === 'light' ? '#F3FBE6' : '#CDCDCD',
-      
-    }}
-    >
+    <div className = {styles.leftsidebar}>
       <h1>Site Settings</h1>
 
-      <div style = {{
-         backgroundColor: theme === 'light' ? '#E6ECFB' : '#18235D',
-      }}>
+      <div>
 
         <h1>Appearance</h1>
 

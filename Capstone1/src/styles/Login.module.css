@@ -4,14 +4,14 @@
     flex-direction:row;
     justify-content:center;
     gap:120px;
-    height: 2500px;
+    height: 1000px;
     margin-top:1px;
 
 }
 .login{
     background-color:#F3FBE6;
-    height:650px;
-    width:550px;
+    height:625px;
+    width:525px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -22,8 +22,8 @@
 }
 .create{
     background-color:#F3FBE6;
-    height:650px;
-    width:550px;
+    height:625px;
+    width:525px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -41,6 +41,7 @@
 .login p{
     text-align: right;
     width: 75%;
+    margin-bottom:30px;
 
 }
 .create h2{
@@ -64,9 +65,27 @@
   opacity:0.5;
 }
 .loginButton{
+    width:440px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     height:55px;
-    width:40%;
     border:none;
     font-size:20px;
     margin-top:30px;
+    border:solid;
+    border-color:grey;
+    border-width:1px;
+    border-radius:4px;
+    font-size:30px;
+    background-color:white;
+}
+.formCheck{
+    padding-top:20px;
+}
+.formCheck button{
+    margin-top:70px;
+}
+.login button{
+    margin-top:45px;
 }
