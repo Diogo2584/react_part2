@@ -1,32 +1,68 @@
-import { useContext } from 'react';
-import { ThemeSettings } from '../components/ThemeSettings';
+import React, { useContext } from 'react';
+import * as ThemeContextModule from '../components/ThemeContext';
 import light from '../assets/light.png';
 import dark from '../assets/dark.png';
+import styles from '../styles/Settings.module.css';
+
+// Support either `export default ThemeContext` or `export const ThemeContext = ...`
+const ThemeContext = ThemeContextModule.default ?? ThemeContextModule.ThemeContext;
 
 function Settings() {
-  const { theme, toggleTheme } = useContext(ThemeSettings);
+  const context = useContext(ThemeContext);
+
+  // If rendered outside a ThemeProvider, show a helpful message instead of crashing
+  if (!context) {
+    return (
+      <div className={styles.leftSidebar ?? styles.leftsidebar ?? ''} style={{ padding: '1rem' }}>
+        <h2>Site Settings</h2>
+        <p>No ThemeProvider found. Wrap your app with ThemeContext.Provider.</p>
+      </div>
+    );
+  }
+
+  // Accept either a toggle-only API or an API that exposes setTheme
+  const { theme = 'light', toggleTheme = () => {}, setTheme } = context;
+
+  const switchToLight = () => {
+    if (typeof setTheme === 'function') {
+      setTheme('light');
+      return;
+    }
+    // fallback to toggle if there's no setTheme and current theme is dark
+    if (theme === 'dark') toggleTheme();
+  };
+
+  const switchToDark = () => {
+    if (typeof setTheme === 'function') {
+      setTheme('dark');
+      return;
+    }
+    if (theme === 'light') toggleTheme();
+  };
 
   return (
-   //sidebar
-    <div className = {styles.leftsidebar}>
-      <h1>Site Settings</h1>
+    <div className={styles.leftSidebar ?? styles.leftsidebar ?? ''}>
+      <h2>Site Settings</h2>
 
-      <div>
+      <section>
+        <h3>Appearance</h3>
 
-        <h1>Appearance</h1>
+        <div>
+          <img src={light} alt="Light Theme preview" />
+          <button onClick={switchToLight} aria-pressed={theme === 'light'} aria-label="Switch to light theme">
+            Switch to Light
+          </button>
+        </div>
+      </section>
 
-        <img src={light} alt="Light Theme" />
-
-        <button onClick={toggleTheme}>Switch Theme</button>
-      </div>
-
-      <div className="setting-right2">
-
-        <img src={dark} alt="Dark Theme" />
-
-        <button onClick={toggleTheme}>Switch Theme</button>
-      </div>
-
+      <section className={styles.settingRight2 ?? 'setting-right2'}>
+        <div>
+          <img src={dark} alt="Dark Theme preview" />
+          <button onClick={switchToDark} aria-pressed={theme === 'dark'} aria-label="Switch to dark theme">
+            Switch to Dark
+          </button>
+        </div>
+      </section>
     </div>
   );
 }
